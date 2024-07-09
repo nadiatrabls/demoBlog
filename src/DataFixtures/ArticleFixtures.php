@@ -13,7 +13,7 @@ class ArticleFixtures extends Fixture
             //on instancie la classe article qui se trouve dans le dossier app/entity
             $article = new Article();
             //nous pouvons maintenant faire appel au setter pour crée des articles
-            $article->setTitle("Titre de l'article n°$1")
+            $article->setTitle("Titre de l'article n°$i")
                     ->setContent("<p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée</p>")
                     ->setImage("https://picsum.photos/250/150")
                     ->setCreatedAt( new \DateTime());//on instancie la classe datetime() pour fomater la date
