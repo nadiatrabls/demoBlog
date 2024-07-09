@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controller;
+
+use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,10 +35,13 @@ class BlogController extends AbstractController
         ]);
     }
     
-    #[Route('/blog/12', name: 'blog_show')]
-    public function show(): Response
+    #[Route('/blog/{id}', name: 'blog_show')]
+    public function show(Article $article): Response
     {
-        return $this->render('blog/show.html.twig');
+        
+        return $this->render('blog/show.html.twig',[
+               'article'=> $article 
+        ]);
             
        
     }

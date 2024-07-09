@@ -1,9 +1,30 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
-<p>je suis le détail de l'article</p>
-<p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</p>
-<p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</p>
-<p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</p>
-<p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</p>
+	<div class="container text-center mt-5">
+		<h1>{{ article.title}}
+			{{ article.id}}</h1>
+		<div class="card mt-5"  style="width: 50rem; margin:0 auto;">
+			<img src="{{ article.image}}" alt="image de l'article">
+			<div class="card-body mt-5">
+				<p>{{article.content | raw}}</p>
+			</div>
+			<div class="card-footer">
+				<table class="table table-bordered">
+					<tbody>
+						<tr style="background: #8900ES; color:white;">
+							<th>Date de publication</th>
+							<th>Catégorie</th>
+						</tr>
+						<tr>
+							<td>{{ article.createdAt | date('d/m/Y') }}</td>
+							<td class="badge rounded-pill text-bg-primary">News</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
 {% endblock %}
